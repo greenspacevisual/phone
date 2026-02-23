@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Каталог смартфонов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .phone-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>📱 Каталог смартфонов</h1>
+    
+    <div id="catalog">
+        <!-- Сюда будут подгружаться телефоны -->
+    </div>
+
+    <script>
+        // Здесь будут данные о телефонах (временно)
+        const phones = [
+            {
+                name: "Samsung Galaxy S23",
+                price: "70 000 руб.",
+                camera: "50 Мп",
+                battery: "4500 мАч",
+                rating: "4.8",
+                image_url: "https://via.placeholder.com/100"
+            },
+            {
+                name: "iPhone 15",
+                price: "90 000 руб.",
+                camera: "48 Мп",
+                battery: "3650 мАч",
+                rating: "4.9",
+                image_url: "https://via.placeholder.com/100"
+            }
+            // Добавьте сюда другие телефоны из вашего JSON
+        ];
+
+        // Функция для отображения телефонов
+        function displayPhones() {
+            const container = document.getElementById('catalog');
+            container.innerHTML = '';
+            phones.forEach(phone => {
+                const card = document.createElement('div');
+                card.className = 'phone-card';
+                card.innerHTML = `
+                    <h3>${phone.name}</h3>
+            <p>Цена: ${phone.price}</p>
+            <p>Камера: ${phone.camera}</p>
+            <p>Батарея: ${phone.battery}</p>
+            <p>Рейтинг: ${phone.rating} ★</p>
+            <img src="${phone.image_url}" alt="${phone.name}">
+        `;
+                container.appendChild(card);
+            });
+        }
+
+        // Запускаем отображение
+        displayPhones();
+    </script>
+</body>
+</html>
