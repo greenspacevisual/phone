@@ -1,75 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Каталог смартфонов</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .phone-card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
-        img {
-            max-width: 100px;
-            height: auto;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FYPhone — Найди свой идеальный телефон</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>📱 Каталог смартфонов</h1>
-    
-    <div id="catalog">
-        <!-- Сюда будут подгружаться телефоны -->
-    </div>
+    <!-- Верхний блок со слоганом и поиском -->
+    <header class="hero">
+        <div class="container">
+            <h1>Найди свой идеальный телефон с <span class="brand">#FYPhone</span></h1>
+            <div class="search-box">
+                <input type="text" placeholder="Введите модель или характеристики...">
+                <button class="btn">Найти</button>
+            </div>
+        </div>
+    </header>
 
-    <script>
-        // Здесь будут данные о телефонах (временно)
-        const phones = [
-            {
-                name: "Samsung Galaxy S23",
-                price: "70 000 руб.",
-                camera: "50 Мп",
-                battery: "4500 мАч",
-                rating: "4.8",
-                image_url: "https://via.placeholder.com/100"
-            },
-            {
-                name: "iPhone 15",
-                price: "90 000 руб.",
-                camera: "48 Мп",
-                battery: "3650 мАч",
-                rating: "4.9",
-                image_url: "https://via.placeholder.com/100"
-            }
-            // Добавьте сюда другие телефоны из вашего JSON
-        ];
+    <!-- Блок с карточками телефонов -->
+    <section class="phones">
+        <div class="container">
+            <h2>Популярные модели</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Phone 1">
+                    <h3>Model X Pro</h3>
+                    <p>Флагман с камерой 108 Мп и батареей 5000 мАч</p>
+                    <span class="price">69 990 ₽</span>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Phone 2">
+                    <h3>Ultra S</h3>
+                    <p>Сверхбыстрая зарядка и дисплей 120 Гц</p>
+                    <span class="price">54 990 ₽</span>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Phone 3">
+                    <h3>Lite Plus</h3>
+                    <p>Отличный выбор для повседневного использования</p>
+                    <span class="price">29 990 ₽</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Функция для отображения телефонов
-        function displayPhones() {
-            const container = document.getElementById('catalog');
-            container.innerHTML = '';
-            phones.forEach(phone => {
-                const card = document.createElement('div');
-                card.className = 'phone-card';
-                card.innerHTML = `
-                    <h3>${phone.name}</h3>
-            <p>Цена: ${phone.price}</p>
-            <p>Камера: ${phone.camera}</p>
-            <p>Батарея: ${phone.battery}</p>
-            <p>Рейтинг: ${phone.rating} ★</p>
-            <img src="${phone.image_url}" alt="${phone.name}">
-        `;
-                container.appendChild(card);
-            });
-        }
-
-        // Запускаем отображение
-        displayPhones();
-    </script>
+    <!-- Нижний блок с навигацией и соцсетями -->
+    <footer class="footer">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="#">Главная</a>
+                <a href="#">Топы</a>
+                <a href="#">О нас</a>
+            </nav>
+            <div class="social">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="#">VK</a>
+                    <a href="#">Telegram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+            <p class="copyright">© 2024 FYPhone. Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>
